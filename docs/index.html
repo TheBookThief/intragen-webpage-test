@@ -37,23 +37,38 @@
             margin-top: 20px;
         }
 
-        .nav-pills > li {
+        .nav-pills>li {
             margin: 0 10px;
         }
 
-        .summary-section,
-        .methods-section,
-        .dataset-section,
-        .experiments-section,
-        .results-section,
-        .contributions-section {
+        .content-section {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
             background: #ffffff;
-            margin-bottom: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        .content-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .content-section img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        .video-intro,
         .video-demo {
             text-align: center;
             margin: 30px 0;
@@ -92,63 +107,74 @@
         </section>
         <ul class="nav nav-pills">
             <li><a target="_blank" href="https://arxiv.org/abs/2411.16804">
-                <image src="assets/images/arxiv.png" height="25px" alt="arXiv"> <u>Arxiv</u></a></li>
-            <li><a target="_blank" href="https://arxiv.org/abs/2411.16804">
-                <image src="assets/images/book_logo_blue.png" height="25px" alt="Paper"> <u>Paper</u></a></li>
+                <img src="assets/images/arxiv.png" height="25px" alt="arXiv"> <u>Arxiv</u></a></li>
+            <li><a target="_blank" href="https://arxiv.org/pdf/2411.16804">
+                <img src="assets/images/book_logo_blue.png" height="25px" alt="Paper"> <u>Paper</u></a></li>
             <li><a target="_blank" href="https://github.com/insait-institute/InTraGen">
-                <image src="assets/images/github.png" height="25px" alt="Code"> <u>Code</u></a></li>
+                <img src="assets/images/github.png" height="25px" alt="Code"> <u>Code</u></a></li>
         </ul>
     </header>
 
     <main class="container">
+        <section class="video-intro">
+            <p>
+                <img src="assets/intragen.gif" alt="WHAAA">
+            </p>
+        </section>
 
-        <section class="summary-section">
+        <section class="content-section summary-section">
             <h2>Abstract</h2>
             <p>
                 InTraGen introduces a novel pipeline for generating realistic object interaction scenarios using trajectory control. By leveraging a multi-modal interaction encoding pipeline and object ID injection, it enhances interactions between objects and their environment. Four new datasets and a trajectory quality metric are proposed for evaluation. Results demonstrate improved visual fidelity and quantitative performance.
             </p>
+            <img src="assets/images/summary_image.png" alt="Abstract Illustration">
         </section>
 
-        <section class="methods-section">
+        <section class="content-section contributions-section">
+            <h2>Key Contributions</h2>
+            <p>
+                - Introduction of a multi-modal interaction encoding pipeline that integrates sparse pose encoding and object ID maps. <br>
+                - Development of the Video Interaction (ViN) dataset with four subsets: Pool, Dominoes, Football, and MOVi-Extended. <br>
+                - Proposal of a new evaluation metric, the Matching Trajectory Evaluation Metric (MTEM), for trajectory quality assessment. <br>
+                - Extensive experiments showcasing improvements in trajectory adherence and interaction realism over baseline methods. <br>
+                - Use of a Diffusion Transformer (DiT) for long-term video generation, guided by trajectory conditions. <br>
+            </p>
+            <!-- <img src="assets/contributions_image.jpg" alt="Contributions Overview"> -->
+        </section>
+
+        <section class="content-section methods-section">
             <h2>Methods</h2>
             <p>
                 InTraGen leverages a multi-modal interaction encoding mechanism, which integrates sparse pose encoding and object ID maps to capture dynamic, static, and interactive information. The method employs a Diffusion Transformer (DiT) for long-term video generation, guided by trajectory conditions.
             </p>
+            <img src="assets/images/methods_image.png" alt="Methods Diagram">
         </section>
 
-        <section class="dataset-section">
+        <section class="content-section dataset-section">
             <h2>Datasets</h2>
             <p>
                 The Video Interaction (ViN) dataset is introduced, containing four subsets: Pool, Dominoes, Football, and MOVi-Extended. These datasets feature diverse scenes, high-quality visuals, and rich object interactions. Ground truth trajectories and various evaluation metrics are included to support model training and validation.
             </p>
+            <img src="assets/images/dataset_image.png" alt="Datasets Illustration">
         </section>
 
-        <section class="experiments-section">
+        <section class="content-section experiments-section">
             <h2>Experiments</h2>
             <p>
                 Extensive experiments were conducted to evaluate InTraGen's performance. Metrics such as Matching Trajectory Evaluation Metric (MTEM), SSIM, PSNR, LPIPS, and FID were used to demonstrate improvements over baseline methods.
             </p>
+            <img src="assets/images/experiments_image.png" alt="Experiments Chart">
         </section>
 
-        <section class="results-section">
+        <section class="content-section results-section">
             <h2>Results</h2>
             <p>
                 InTraGen achieves superior results in trajectory adherence and interaction realism. Quantitative comparisons and user studies confirm its effectiveness. Qualitative examples highlight the realistic and visually pleasing outputs generated by the model.
             </p>
+            <img src="assets/images/results_image.png" alt="Results Visualization">
         </section>
 
-        <section class="contributions-section">
-            <h2>Key Contributions</h2>
-            <ul>
-                <li>Introduction of a multi-modal interaction encoding pipeline that integrates sparse pose encoding and object ID maps.</li>
-                <li>Use of a Diffusion Transformer (DiT) for long-term video generation, guided by trajectory conditions.</li>
-                <li>Development of the Video Interaction (ViN) dataset with four subsets: Pool, Dominoes, Football, and MOVi-Extended.</li>
-                <li>Proposal of a new evaluation metric, the Matching Trajectory Evaluation Metric (MTEM), for trajectory quality assessment.</li>
-                <li>Extensive experiments showcasing improvements in trajectory adherence and interaction realism over baseline methods.</li>
-            </ul>
-        </section>
-
-        <section id="demo" class="video-demo">
+        <!-- <section id="demo" class="video-demo">
             <h2>Video Demos</h2>
             <video controls width="80%" poster="assets/demo_poster1.jpg">
                 <source src="assets/demo1.mp4" type="video/mp4">
@@ -159,7 +185,7 @@
                 <source src="assets/demo2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        </section>
+        </section> -->
 
     </main>
 
