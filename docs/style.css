@@ -1,0 +1,132 @@
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+}
+
+.author {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.nav-pills {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.nav-pills>li {
+    margin: 0 10px;
+}
+
+.content-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.content-section img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.video-intro,
+.video-demo {
+    text-align: center;
+    margin: 30px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.highlight {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.highlight:hover {
+    text-decoration: underline;
+}
+.nav-pills {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-pills .nav-item {
+    display: inline-block;
+    background-color: black; /* Black background */
+    border-radius: 30px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside the box */
+    margin-right: 10px; /* Space between items */
+    color: white; /* White text and icons */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-pills .nav-item:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+.nav-pills .nav-item u {
+    color: white; /* Make the underline text white */
+}
+
+.nav-pills .nav-item img {
+    vertical-align: middle; /* Align the icon with the text */
+    margin-right: 5px; /* Space between the icon and the text */
+}
+.content-section ul {
+    list-style-type: none; 
+    padding-left: 0;
+}
+.content-section li {
+    position: relative; 
+    padding-left: 30px; 
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px; 
+}
+.content-section li::before {
+    content: "\2022"; 
+    font-size: 30px;
+    position: absolute;
+    left: 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff; 
+}
+.content-section li:hover {
+    color: #007bff; 
+    cursor: pointer; 
+}
